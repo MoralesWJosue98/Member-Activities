@@ -1,4 +1,5 @@
 using MemberActivites.Infrastructure.Database;
+using MemberActivites.Infrastructure.Extension;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -18,7 +19,8 @@ builder.Services.AddDbContext<DatabaseContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("MemberActivities")
     ));
 
-
+// Unit Of Work
+builder.Services.SetupUnitOfWork();
 
 //AutoMapper
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load));
