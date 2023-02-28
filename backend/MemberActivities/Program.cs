@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 // Add dbContext inyection dependency
 builder.Services.AddDbContext<DatabaseContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("TechnicalTest.DDD.API")
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("MemberActivities")
     ));
 
 var app = builder.Build();
