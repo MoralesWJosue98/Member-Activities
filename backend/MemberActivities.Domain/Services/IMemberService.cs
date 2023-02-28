@@ -10,11 +10,11 @@ namespace MemberActivities.Domain.Services
 {
     public interface IMemberService
     {
-        Task<ActivityDTO> GetActivtyById(int id);
-        Task<IEnumerable<ActivityDTO>> GetAllActivity(Pagination pagination);
-        Task<ActivityDTO> AddActivty(ActivityDTO activityDTO);
-        Task UpdateActivity(ActivityDTO activityDTO);
-        Task DeleteActivity(int id);
+        Task<MemberDTO> GetMemberById(int id);
+        Task<IEnumerable<MemberDTO>> GetAllMembers(Pagination pagination);
+        Task<MemberDTO> AddMember(MemberDTO memberDTO);
+        Task UpdateMember(MemberDTO memberDTO);
+        Task DeleteMember(int id);
 
 
     }

@@ -20,19 +20,19 @@ namespace MemberActivites.Infrastructure.Repositories
             _entities = entities;
         }
 
-        public async Task AddAcitivtyAsync(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
             await _entities.AddAsync(entity);
         }
 
-        public void DeleteActivity(TEntity entity)
+        public void Delete(TEntity entity)
         {
             _entities.Remove(entity);
         }
 
-        public async Task DeleteActivityAsync(TEntity entity)
+        public async Task DeleteAsync(TEntity entity)
         {
-            await Task.Run(() => { DeleteActivity(entity); });
+            await Task.Run(() => { Delete(entity); });
         }
 
         public async Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate)
@@ -40,19 +40,19 @@ namespace MemberActivites.Infrastructure.Repositories
             return await _entities.AnyAsync(predicate);
         }
 
-        public async Task<TEntity> GetAcitvityByIdAsync(object id)
+        public async Task<TEntity> GetByIdAsync(object id)
         {
             return await _entities.FindAsync(id).ConfigureAwait(false);
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllActivityAsync(int skip, int limit, IEnumerable<Expression<Func<TEntity, bool>>> predicates = null)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(int skip, int limit, IEnumerable<Expression<Func<TEntity, bool>>> predicates = null)
         {
             return await _entities.Filter(predicates)
                  .Skip(skip)
                  .Take(limit).ToListAsync();
         }
 
-        public async Task UpdateActivityAsync(TEntity entity)
+        public async Task UpdateAsync(TEntity entity)
         {
             await Task.Run(() => { _entities.Update(entity); });
         }

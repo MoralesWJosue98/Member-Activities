@@ -10,12 +10,12 @@ namespace MemberActivities.Domain.Repositories
     public interface IRepository<TEntity> where TEntity : class
     {
         // Establishing the operations that will be needed
-        Task AddAcitivtyAsync(TEntity entity);
-        Task UpdateActivityAsync(TEntity entity);
-        void DeleteActivity(TEntity entity);
-        Task DeleteActivityAsync(TEntity entity);
-        Task<TEntity> GetAcitvityByIdAsync(object id);
-        Task<IEnumerable<TEntity>> GetAllActivityAsync(int skip, int limit, IEnumerable<Expression<Func<TEntity, bool>>> predicates = null);
+        Task AddAsync(TEntity entity);
+        Task UpdateAsync(TEntity entity);
+        void Delete(TEntity entity);
+        Task DeleteAsync(TEntity entity);
+        Task<TEntity> GetByIdAsync(object id);
+        Task<IEnumerable<TEntity>> GetAllAsync(int skip, int limit, IEnumerable<Expression<Func<TEntity, bool>>> predicates = null);
         Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate);
 
     }
