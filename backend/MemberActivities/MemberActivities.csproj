@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MemberActivites.Infrastructure\MemberActivites.Infrastructure.csproj" />
+    <ProjectReference Include="..\MemberActivities.Application\MemberActivities.Application.csproj" />
   </ItemGroup>
 
 </Project>

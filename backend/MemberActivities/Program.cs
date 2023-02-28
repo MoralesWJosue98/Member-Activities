@@ -1,5 +1,7 @@
 using MemberActivites.Infrastructure.Database;
 using MemberActivites.Infrastructure.Extension;
+using MemberActivities.Application.Service;
+using MemberActivities.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -24,6 +26,8 @@ builder.Services.SetupUnitOfWork();
 
 //AutoMapper
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load));
+
+builder.Services.AddScoped<IMemberService, MemberService>();
 
 var app = builder.Build();
 
