@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Member_Activites.Controllers
+namespace MemberActivities.Controllers
 {
     [ApiController]
     [Route("[controller]")]

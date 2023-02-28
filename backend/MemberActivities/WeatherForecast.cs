@@ -1,4 +1,4 @@
-namespace Member_Activites
+namespace MemberActivities
 {
     public class WeatherForecast
     {
