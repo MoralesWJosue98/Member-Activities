@@ -1,5 +1,6 @@
 using MemberActivites.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DatabaseContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("MemberActivities")
     ));
+
+//AutoMapper
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load));
 
 var app = builder.Build();
 
