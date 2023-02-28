@@ -17,6 +17,7 @@ namespace MemberActivites.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PermissionEntityMemberConfig());
+            modelBuilder.ApplyConfiguration(new PermissionEntityActivityConfig());
         }
 
 
